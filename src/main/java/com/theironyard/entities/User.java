@@ -3,10 +3,10 @@ package com.theironyard.entities;
 
 import com.theironyard.utilities.PasswordStorage;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue

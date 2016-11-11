@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    PlayMeInAdmin Page
+</head>
+<body>
+{{message}}
+{{^user}}
+<form action="/login" method="post">
+    <input type="text" placeholder="UserName" name="username" required/>
+    <input type="password" placeholder="Password" name="password" required/>
+    <button type="submit">Login</button>
+</form>
+{{/user}}
+{{#user}}
+Welcome, {{name}}!!
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+<form action="http://.../upload" method="post" enctype="multipart/form-data">
+    <select>
+        <option value="genre" disabled>Genre</option>
+        <option value="epicMinor">Cinematic Epic in Minor Key</option>
+    </select>
+    <select>
+        <option selected disabled>Voice</option>
+        <option value="bass">Bass</option>
+        <option value="melody">Melody</option>
+        <option value="drum">Drum</option>
+        <option value="alt-drum">Alt-Drum</option>
+        <option value="harmony">Harmony</option>
+        <option value="alt-harmony">Alt-Harmony</option>
+    </select>
+    <input accept="audio/*" type="file" name="sample" />
+    <button type="submit">Upload</button>
+</form>
+{{/user}}
+</body>
+</html>
